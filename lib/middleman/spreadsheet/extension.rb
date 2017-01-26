@@ -6,6 +6,7 @@ module Middleman
     class CredentialsNotFound < Exception; end
 
     class Extension < ::Middleman::Extension
+      option :config, nil, 'Google API credentials config json'
       option :credentials, nil, 'Google API credentials'
       option :data_name, "spreadsheet", 'Spreadsheet key'
       option :spreadsheet_key, nil, 'Spreadsheet key'
