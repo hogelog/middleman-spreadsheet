@@ -1,4 +1,5 @@
 # middleman-spreadsheet
+[![Gem Version](https://badge.fury.io/rb/middleman-spreadsheet.svg)](http://badge.fury.io/rb/middleman-spreadsheet)
 
 Middleman extension for using Google spreadsheet as data files. Edit
 
