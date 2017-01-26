@@ -1,6 +1,6 @@
 require "middleman-core"
 
-Middleman::Extensions.register :middleman-spreadsheet do
-  require "my-extension/extension"
-  MyExtension
+Middleman::Extensions.register :spreadsheet do
+  require "middleman/spreadsheet/extension"
+  Middleman::Spreadsheet::Extension
 end

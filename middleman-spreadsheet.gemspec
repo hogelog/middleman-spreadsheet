@@ -1,24 +1,28 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'middleman/spreadsheet/version'
 
-Gem::Specification.new do |s|
-  s.name        = "middleman-spreadsheet"
-  s.version     = "0.0.1"
-  s.platform    = Gem::Platform::RUBY
-  # s.authors     = ["Your Name"]
-  # s.email       = ["email@example.com"]
-  # s.homepage    = "http://example.com"
-  # s.summary     = %q{A short summary of your extension}
-  # s.description = %q{A longer description of your extension}
+Gem::Specification.new do |spec|
+  spec.name          = "middleman-spreadsheet"
+  spec.version       = Middleman::Spreadsheet::VERSION
+  spec.authors       = ["hogelog"]
+  spec.email         = ["konbu.komuro@gmail.com"]
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
-  
-  # The version of middleman-core your extension depends on
-  s.add_runtime_dependency("middleman-core", [">= 4.2.0"])
-  
-  # Additional dependencies
-  # s.add_runtime_dependency("gem-name", "gem-version")
+  spec.summary       = %q{Middleman extension for using Google spreadsheet as data files.}
+  spec.homepage      = "https://github.com/hogelog/sheet_wrap"
+  spec.license       = "MIT"
+
+  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(%r{^(test|spec|features)/})
+  end
+  spec.bindir        = "exe"
+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.require_paths = ["lib"]
+
+  spec.add_dependency "sheet_wrap", ">= 0.1.1"
+  spec.add_runtime_dependency "middleman-core", ">= 4.2.0"
+
+  spec.add_development_dependency "bundler", "~> 1.14"
+  spec.add_development_dependency "rake", "~> 10.0"
 end
