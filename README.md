@@ -19,6 +19,7 @@ $ bundle
 ## Setup
 
 1. Go to [Google API Console](https://console.developers.google.com/apis/credentials) and creates your own API credentials.
+    - Enable Drive API
 2. Create google credentials json like
 ```
 {
@@ -35,6 +36,8 @@ end
 ```
 
 If you want to manage credentials without json, you could to use `spreadsheet.credentials` option.
+
+See [gimite/google-drive-ruby documentation](https://github.com/gimite/google-drive-ruby/blob/master/doc/authorization.md) for more detail authorization information.
 
 ## Usage
 ### Create spreadsheet
